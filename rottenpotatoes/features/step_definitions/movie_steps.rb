@@ -1,3 +1,6 @@
+#บัณฑิตา อวยชัยเจริญ 5510613234
+#รุจิรางค์ ไวยดารา 5510613275
+
 # Add a declarative step here for populating the DB with movies.
 
 Given /the following movies exist/ do |movies_table|
@@ -15,7 +18,8 @@ end
 Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   #  ensure that that e1 occurs before e2.
   #  page.body is the entire content of the page as a string.
-  flunk "Unimplemented"
+  #flunk "Unimplemented"
+  page.body.should match /#{e1}.*#{e2}/m
 end
 
 # Make it easier to express checking or unchecking several boxes at once

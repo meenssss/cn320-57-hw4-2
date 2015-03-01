@@ -1,3 +1,6 @@
+#บัณฑิตา อวยชัยเจริญ 55106132034
+#รุจิรางค์ ไวยดารา 5510613275
+
 Feature: display list of movies sorted by different criteria
  
   As an avid moviegoer
@@ -24,7 +27,9 @@ Background: movies have been added to database
 Scenario: sort movies alphabetically
   When I follow "Movie Title"
   # your steps here
+  Then I should see "Aladdin" before "Amelie"
 
 Scenario: sort movies in increasing order of release date
   When I follow "Release Date"
   # your steps here
+  Then I should see "Raiders of the Lost Ark" before "Amelie"

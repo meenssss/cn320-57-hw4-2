@@ -1,3 +1,6 @@
+#บัณฑิตา อวยชัยเจริญ 5510613234
+#รุจิรางค์ ไวยดารา 5510613275
+
 Feature: display list of movies filtered by MPAA rating
  
   As a concerned parent
@@ -48,5 +51,11 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
 
 Scenario: all ratings selected
  
+  When I check the following ratings: G, PG, PG-13, R
+  And I press "Refresh"
   Then I should see all of the movies
-  
+
+Scenario: no ratings selected
+  When I uncheck the following ratings: G, PG, PG-13, R
+  And I press "Refresh"
+  Then I should see none of the movies
